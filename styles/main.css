@@ -8,7 +8,7 @@ body{
   background-color: #ccc;
 }
 
-.boardGrid{
+.gridBoard{
   margin: 50px 50px;
   display: flex;  
   align-self: center;
@@ -19,7 +19,7 @@ body{
   background-color: cornsilk;
   box-shadow: 0 0 30px 0 rgba(60, 11, 107, 0.2)
 }
-.boardGrid div{
+.gridBoard div{
   border: 1px solid black;
   height: 10%;
   width: 10%;
@@ -33,6 +33,13 @@ body{
   background-color: cornflowerblue;
 }
 
-.frog{
+.gridBoard.dorothy{
   color: burlywood;
+}
+
+#startFrogger{
+  margin: 20px
+}
+.gridBoard div.frog {
+  background-color: green;
 }

@@ -1,39 +1,33 @@
-const boardGrid = document.querySelector('.boardGrid')
+const gridBoard = document.querySelector('.gridBoard')
 const cells = []
 // console.log(boardGrid)
-// const startFrogger = document.querySelector('#startFrogger')
-
-// const frogStartPosition = document.createElement('.FrogStartPosition')
-// document.classList.add(frogStartPosition)
-// const frogHome = document.createElement('.frogHome')
-// document.classList.add(frogHome)
-// const frog = document.createElement('.frog')
-// document.classList.add(frog)
-
-
+const startFrogger = document.querySelector('#startFrogger')
 
 const gridWidth = 10
 const totalCells = gridWidth * gridWidth
 
-//function for creating grid cells on the grid board
+const frogClass = 'frog'
+let frogPosition = 94
+
 function buildGridBoard() {
   for (let i = 0; i < totalCells; i++){
     const cell = document.createElement('div')
-    boardGrid.appendChild(cell)
+    gridBoard.appendChild(cell)
     cells.push(cell)
     cell.textContent = i
   }
 }
+
 buildGridBoard()
 
-//  Creating function for starting game
-// function handlefroggerStart(){
-//   console.log('clicked')
+cells[frogPosition].classList.add(frogClass)
 
-// }
-// Adding eventlistener to the froggerStart handle
-// startFrogger.addEventListener('click',handlefroggerStart)
+function handlefroggerStart(){
+  console.log('clicked')
 
+}
+
+startFrogger.addEventListener('click', handlefroggerStart)
 
 
 
