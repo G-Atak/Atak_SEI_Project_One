@@ -38,8 +38,24 @@ body{
 }
 
 #startFrogger{
-  margin: 20px
+  margin: 50px
 }
 .gridBoard div.frog {
   background-color: green;
+}
+
+.gridBoard div.carClass{
+  background-color: sienna;
+}
+
+.gridBoard div.carClassOne{
+  background-color: sienna;
+}
+
+.gridBoard div.carClassTwo{
+  background-color: sienna;
+}
+
+.gridBoard div.carClassThree{
+  background-color: sienna;
 }
