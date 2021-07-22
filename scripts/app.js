@@ -1,4 +1,5 @@
 const gridBoard = document.querySelector('.gridBoard')
+const startFrogger = document.querySelector('#startFrogger')
 const cells = []
 
 
@@ -12,8 +13,8 @@ const cells = []
 
 
 const carClass = 'carClass'
-// const carClassOne = 'carClassOne'
-// const carClassTwo = 'carClassTwo'
+const carClassTwo = 'carClassTwo'
+const carClassThree = 'carClassThree'
 // const carClassThree = 'carClassThree'
 
 // const carClassOnePosition = 
@@ -22,10 +23,8 @@ const carClass = 'carClass'
 
 let frogPosition = 94
 let carOne = 80
-
-
-
-const startFrogger = document.querySelector('#startFrogger')
+let carTwo = 79
+let carThree = 60
 
 const width = 10
 const totalCells = width * width
@@ -93,36 +92,85 @@ function moveCarOne(){
       carOne = 80
       addCarOne()
     }
-  } , 1000)
+  } , 500)
   
 
 }
 moveCarOne()
 
 
-// cells[carOne].classList.add('carClass')
-// cells[carClassOne].classList.add('carClassOne')
-// cells[carClassTwo].classList.add('carClassTwo')
-// cells[carClassThree].classList.add('carClassThree')
+
+function addCarTwo(){
+  cells[carTwo].classList.add(carClassTwo)
+}
+
+function removeCarTwo(){
+  cells[carTwo].classList.remove(carClassTwo)
+}
+
+function moveCarTwo(){
+  setInterval(() => {
+    removeCarTwo()
+    carTwo--
+    addCarTwo()
+    if (carTwo === 69){
+      removeCarTwo()
+      carTwo = 79
+      addCarTwo()
+    }
+  } , 300)
+  
+
+}
+moveCarTwo()
 
 
-document.addEventListener('keyup', handleKeyUp)
+function addCarThree(){
+  cells[carThree].classList.add(carClassThree)
+}
+
+function removeCarThree(){
+  cells[carThree].classList.remove(carClassThree)
+}
+
+
+function moveCarThree(){
+  setInterval(() => {
+    removeCarThree()
+    carThree++
+    addCarThree()
+    if (carThree === 70){
+      removeCarThree()
+      carThree = 60
+      addCarThree()
+    }
+  } , 200)
+  
+}
+moveCarThree()
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 cells[frogPosition].classList.add(frogClass)
-
-// cells[carOne].classList.add('carClass')
-// cells[carClassOne].classList.add('carClassOne')
-// cells[carClassTwo].classList.add('carClassTwo')
-// cells[carClassThree].classList.add('carClassThree')
-
-
-
-
+cells[carTwo].classList.add(carClassTwo)
+cells[carThree].classList.add(carClassThree)
 
 function handlefroggerStart(){
   console.log('clicked')
 
 }
+document.addEventListener('keyup', handleKeyUp)
 startFrogger.addEventListener('click', handlefroggerStart)
 document.addEventListener('keyup', handleKeyUp)
 

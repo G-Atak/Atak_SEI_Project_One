@@ -48,14 +48,10 @@ body{
   background-color: sienna;
 }
 
-.gridBoard div.carClassOne{
-  background-color: sienna;
-}
-
 .gridBoard div.carClassTwo{
-  background-color: sienna;
+  background-color: rgb(230, 15, 15);
 }
 
 .gridBoard div.carClassThree{
-  background-color: sienna;
+  background-color: rgb(29, 15, 230);
 }
