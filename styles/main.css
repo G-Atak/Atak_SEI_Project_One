@@ -44,6 +44,7 @@ body{
   background-color: green;
 }
 
+
 .gridBoard div.carClass{
   background-color: sienna;
 }
@@ -55,3 +56,32 @@ body{
 .gridBoard div.carClassThree{
   background-color: rgb(29, 15, 230);
 }
+
+.gridBoard div.logOneClass{
+  width: 10%;
+  border-radius: 1em;
+  background-color: dimgray
+  
+}
+
+.gridBoard div.logTwoClass{
+  width: 10%;
+  border-radius: 1em;
+  background-color: dimgray
+  
+}
+
+.gridBoard div.logThreeClass{
+  width: 10%;
+  border-radius: 1em;
+  background-color: dimgray
+  
+}
+
+.gridBoard div.logFourClass{
+  width: 10%;
+  border-radius: 1em;
+  background-color: dimgray
+  
+}
+

@@ -12,23 +12,26 @@ const cells = []
 //cells[carPosition].classList.add(carClass)
 
 
+const logOneClass = 'logOneClass'
+const logTwoClass = 'logTwoClass'
+const logThreeClass = 'logThreeClass'
+const logFourClass = 'logFourClass'
+
 const carClass = 'carClass'
 const carClassTwo = 'carClassTwo'
 const carClassThree = 'carClassThree'
-// const carClassThree = 'carClassThree'
-
-// const carClassOnePosition = 
-// const carClassTwo = 'carClassTwo'
-// const carClassThree = 'carClassThree'
 
 let frogPosition = 94
 let carOne = 80
 let carTwo = 79
 let carThree = 60
+let logOne = 40
+let logTwo = 39
+let logThree =  20
+let logFour = 19
 
 const width = 10
 const totalCells = width * width
-
 const frogClass = 'frog' 
 
 function buildGridBoard() {
@@ -93,12 +96,8 @@ function moveCarOne(){
       addCarOne()
     }
   } , 500)
-  
-
 }
 moveCarOne()
-
-
 
 function addCarTwo(){
   cells[carTwo].classList.add(carClassTwo)
@@ -119,8 +118,6 @@ function moveCarTwo(){
       addCarTwo()
     }
   } , 300)
-  
-
 }
 moveCarTwo()
 
@@ -132,7 +129,6 @@ function addCarThree(){
 function removeCarThree(){
   cells[carThree].classList.remove(carClassThree)
 }
-
 
 function moveCarThree(){
   setInterval(() => {
@@ -150,26 +146,111 @@ function moveCarThree(){
 moveCarThree()
 
 
+function addLogOne(){
+  cells[logOne].classList.add(logOneClass)
+}
+
+function removeLogOne(){
+  cells[logOne].classList.remove(logOneClass)
+}
+
+function moveLogOneClass(){
+  setInterval(() => {
+    removeLogOne()
+    logOne++
+    addLogOne()
+    if (logOne === 48){
+      removeLogOne()
+      logOne = 40
+      addLogOne()
+    }
+  } , 500)
+}
+moveLogOneClass()
+
+function addLogTwo(){
+  cells[logTwo].classList.add(logTwoClass)
+}
+
+function removeLogTwo(){
+  cells[logTwo].classList.remove(logTwoClass)
+}
+
+function moveLogTwo(){
+  setInterval(() => {
+    removeLogTwo()
+    logTwo--
+    addLogTwo()
+    if (logTwo === 29){
+      removeLogTwo()
+      logTwo = 39
+      addLogTwo()
+    }
+  } , 300)
+}
+moveLogTwo()
 
 
 
 
 
+function addLogThree(){
+  cells[logThree].classList.add(logThreeClass)
+}
+
+function removeLogThree(){
+  cells[logThree].classList.remove(logThreeClass)
+}
+
+function moveLogThreeClass(){
+  setInterval(() => {
+    removeLogThree()
+    logThree++
+    addLogThree()
+    if (logThree === 30){
+      removeLogThree()
+      logThree = 20
+      addLogThree()
+    }
+  } , 500)
+}
+moveLogThreeClass()
 
 
+function addLogFour(){
+  cells[logFour].classList.add(logFourClass)
+}
 
+function removeLogFour(){
+  cells[logFour].classList.remove(logFourClass)
+}
 
-
-
+function moveLogFourClass(){
+  setInterval(() => {
+    removeLogFour()
+    logFour--
+    addLogFour()
+    if (logFour === 9){
+      removeLogFour()
+      logFour = 19
+      addLogFour()
+    }
+  } , 500)
+}
+moveLogFourClass()
 
 cells[frogPosition].classList.add(frogClass)
 cells[carTwo].classList.add(carClassTwo)
 cells[carThree].classList.add(carClassThree)
+cells[logOne].classList.add(logOneClass)
+cells[logTwo].classList.add(logTwoClass)
+cells[logThree].classList.add(logThreeClass)
+cells[logFour].classList.add(logFourClass)
 
 function handlefroggerStart(){
   console.log('clicked')
-
 }
+
 document.addEventListener('keyup', handleKeyUp)
 startFrogger.addEventListener('click', handlefroggerStart)
 document.addEventListener('keyup', handleKeyUp)
