@@ -1,5 +1,9 @@
 const gridBoard = document.querySelector('.gridBoard')
 const cells = []
+const carsMovingRight = ['C1','C2','C3','C4']
+const carsMovingLeft = ['C1','C2','C3','4']
+const logs = ['log1','log2','log3']
+
 const startFrogger = document.querySelector('#startFrogger')
 
 const width = 10
