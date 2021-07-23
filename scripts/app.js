@@ -1,5 +1,6 @@
 const gridBoard = document.querySelector('.gridBoard')
 const startFrogger = document.querySelector('#startFrogger')
+// const scoreBox = document.querySelector('#score-box')
 const cells = []
 
 
@@ -11,7 +12,7 @@ const cells = []
 // const carsMovingLeftPosition = carsMovingLeft.map(gridBoard  => cells[71,73,75,77])
 //cells[carPosition].classList.add(carClass)
 
-
+let lives = 3
 const logOneClass = 'logOneClass'
 const logTwoClass = 'logTwoClass'
 const logThreeClass = 'logThreeClass'
@@ -29,6 +30,7 @@ let logOne = 40
 let logTwo = 39
 let logThree =  20
 let logFour = 19
+// let score = 0
 
 const width = 10
 const totalCells = width * width
@@ -61,15 +63,19 @@ function handleKeyUp(event){
   switch (event.keyCode){
     case 39:
       if (horizontalPosition < width - 1) frogPosition++
+      hitCar()
       break
     case 37:
       if (horizontalPosition > 0) frogPosition--
+      hitCar()
       break
     case 38:
       if (verticalPosition > 0) frogPosition -= width 
+      hitCar()
       break
     case 40:
       if (verticalPosition < width - 1) frogPosition += width
+      hitCar()
       break
     default:
       console.log('invalid key')
@@ -191,9 +197,6 @@ function moveLogTwo(){
 moveLogTwo()
 
 
-
-
-
 function addLogThree(){
   cells[logThree].classList.add(logThreeClass)
 }
@@ -239,6 +242,33 @@ function moveLogFourClass(){
 }
 moveLogFourClass()
 
+function hitCar(){
+  if (cells[frogPosition] === cells[carOne]) {
+    lives -= 1
+    console.log(lives)
+  } 
+  if (cells[frogPosition] === cells[carTwo]) {
+    lives -= 1
+  }
+  if (cells[frogPosition] === cells[carThree]) {
+    lives -= 1
+  }
+  if (lives === 0 ) {
+    alert('Game Over')
+    window.location.reload(94)
+  }
+}
+
+
+// function hitCar(){
+//   if (cells[i] === frogPosition && cells[i] === carOne) {
+//     console.log('Hit by Car')
+//   }
+
+// } 
+// hitCar()
+
+
 cells[frogPosition].classList.add(frogClass)
 cells[carTwo].classList.add(carClassTwo)
 cells[carThree].classList.add(carClassThree)
@@ -248,8 +278,9 @@ cells[logThree].classList.add(logThreeClass)
 cells[logFour].classList.add(logFourClass)
 
 function handlefroggerStart(){
-  console.log('clicked')
+  console.log('StartFrogger now')
 }
+
 
 document.addEventListener('keyup', handleKeyUp)
 startFrogger.addEventListener('click', handlefroggerStart)
