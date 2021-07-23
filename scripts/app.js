@@ -64,6 +64,7 @@ function handleKeyUp(event){
     case 39:
       if (horizontalPosition < width - 1) frogPosition++
       hitCar()
+      rideLog()
       break
     case 37:
       if (horizontalPosition > 0) frogPosition--
@@ -260,14 +261,24 @@ function hitCar(){
 }
 
 
-// function hitCar(){
-//   if (cells[i] === frogPosition && cells[i] === carOne) {
-//     console.log('Hit by Car')
+function rideLog(){
+  if (cells[frogPosition] === cells[logOne]) {
+    
+    console.log('frog++')
+  } 
+}
+rideLog
+//   if (cells[frogPosition] === cells[logTwo]) {
+//     lives -= 1
 //   }
-
-// } 
-// hitCar()
-
+//   if (cells[frogPosition] === cells[carThree]) {
+//     lives -= 1
+//   }
+//   if (lives === 0 ) {
+//     alert('Game Over')
+//     window.location.reload(94)
+//   }
+// }
 
 cells[frogPosition].classList.add(frogClass)
 cells[carTwo].classList.add(carClassTwo)
